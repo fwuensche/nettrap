@@ -1,29 +1,39 @@
 <div class="col mt-3">
+  <form>
+    <fieldset class="form-group">
+      <input type="text" name="search" class="form-control" placeholder="Seartch..." value="<%= params[:search] %>" autocomplete="off">
+    </fieldset>
+  </form>
+
+  <hr>
+
   <div class="card-columns">
     <% @images.each do |image| %>
       <div class="card">
         <img class="card-img-top" src="<%= resized_url(url: image.urls.raw, w: 400, h: 400) %>" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title"><%= image.user.name %> @<%= image.user.twitter_username %></h5>
+          <h5 class="card-title"><%= image.user.name %></h5>
           <p class="card-text">
-            <%= link_to "4961 x 4961", download_image_path(url: image.urls.raw, w: 4961, h: 4961, image_id: image.id), target: "_blank" %>
-            <%= link_to "3508 x 4961", download_image_path(url: image.urls.raw, w: 3508, h: 4961, image_id: image.id), target: "_blank" %>
-            <%= link_to "1057 x 1857", download_image_path(url: image.urls.raw, w: 1057, h: 1857, image_id: image.id), target: "_blank" %>
-            <%= link_to "2480 x 1098", download_image_path(url: image.urls.raw, w: 2480, h: 1098, image_id: image.id), target: "_blank" %>
-            <%= link_to "2508 x 4961", download_image_path(url: image.urls.raw, w: 2508, h: 4961, image_id: image.id), target: "_blank" %>
-            <%= link_to "2000 x 2000", download_image_path(url: image.urls.raw, w: 2000, h: 2000, image_id: image.id), target: "_blank" %>
-            <%= link_to "2300 x 3000", download_image_path(url: image.urls.raw, w: 2300, h: 3000, image_id: image.id), target: "_blank" %>
-            <%= link_to "2000 x 1400", download_image_path(url: image.urls.raw, w: 2000, h: 1400, image_id: image.id), target: "_blank" %>
-            <%= link_to "3000 x 4300", download_image_path(url: image.urls.raw, w: 3000, h: 4300, image_id: image.id), target: "_blank" %>
-            <%= link_to "1300 x 2000", download_image_path(url: image.urls.raw, w: 1300, h: 2000, image_id: image.id), target: "_blank" %>
-            <%= link_to "6380 x 5315", download_image_path(url: image.urls.raw, w: 6380, h: 5315, image_id: image.id), target: "_blank" %>
-            <%= link_to "2000 x 2000", download_image_path(url: image.urls.raw, w: 2000, h: 2000, image_id: image.id), target: "_blank" %>
-            <%= link_to "2000 x 4000", download_image_path(url: image.urls.raw, w: 2000, h: 4000, image_id: image.id), target: "_blank" %>
-            <%= link_to "5200 x 3600", download_image_path(url: image.urls.raw, w: 5200, h: 3600, image_id: image.id), target: "_blank" %>
-            <%= link_to "1730 x 710", download_image_path(url: image.urls.raw, w: 1730, h: 710, image_id: image.id), target: "_blank" %>
-            <%= link_to "1180 x 2400", download_image_path(url: image.urls.raw, w: 1180, h: 2400, image_id: image.id), target: "_blank" %>
-            <%= link_to "1150 x 1300", download_image_path(url: image.urls.raw, w: 1150, h: 1300, image_id: image.id), target: "_blank" %>
-            <%= link_to "950 x 950", download_image_path(url: image.urls.raw, w: 950, h: 950, image_id: image.id), target: "_blank" %>
+            Touts:
+            <%= link_to "4200x4800", download_image_path(url: image.urls.raw, w: 4200, h: 4800, image_id: image.id), target: "_blank" %>
+            <%= link_to "4961x4961", download_image_path(url: image.urls.raw, w: 4961, h: 4961, image_id: image.id), target: "_blank" %>
+            <%= link_to "3508x4961", download_image_path(url: image.urls.raw, w: 3508, h: 4961, image_id: image.id), target: "_blank" %>
+            <%= link_to "1057x1857", download_image_path(url: image.urls.raw, w: 1057, h: 1857, image_id: image.id), target: "_blank" %>
+            <%= link_to "2480x1098", download_image_path(url: image.urls.raw, w: 2480, h: 1098, image_id: image.id), target: "_blank" %>
+            <%= link_to "2508x4961", download_image_path(url: image.urls.raw, w: 2508, h: 4961, image_id: image.id), target: "_blank" %>
+            Colab:
+            <%= link_to "2000x2000", download_image_path(url: image.urls.raw, w: 2000, h: 2000, image_id: image.id), target: "_blank" %>
+            <%= link_to "2300x3000", download_image_path(url: image.urls.raw, w: 2300, h: 3000, image_id: image.id), target: "_blank" %>
+            <%= link_to "2000x1400", download_image_path(url: image.urls.raw, w: 2000, h: 1400, image_id: image.id), target: "_blank" %>
+            <%= link_to "3000x4300", download_image_path(url: image.urls.raw, w: 3000, h: 4300, image_id: image.id), target: "_blank" %>
+            <%= link_to "1300x2000", download_image_path(url: image.urls.raw, w: 1300, h: 2000, image_id: image.id), target: "_blank" %>
+            <%= link_to "6380x5315", download_image_path(url: image.urls.raw, w: 6380, h: 5315, image_id: image.id), target: "_blank" %>
+            <%= link_to "2000x4000", download_image_path(url: image.urls.raw, w: 2000, h: 4000, image_id: image.id), target: "_blank" %>
+            <%= link_to "5200x3600", download_image_path(url: image.urls.raw, w: 5200, h: 3600, image_id: image.id), target: "_blank" %>
+            <%= link_to "1730x710", download_image_path(url: image.urls.raw, w: 1730, h: 710, image_id: image.id), target: "_blank" %>
+            <%= link_to "1180x2400", download_image_path(url: image.urls.raw, w: 1180, h: 2400, image_id: image.id), target: "_blank" %>
+            <%= link_to "1150x1300", download_image_path(url: image.urls.raw, w: 1150, h: 1300, image_id: image.id), target: "_blank" %>
+            <%= link_to "950x950", download_image_path(url: image.urls.raw, w: 950, h: 950, image_id: image.id), target: "_blank" %>
           </p>
         </div>
       </div>
