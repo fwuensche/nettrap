@@ -2,7 +2,7 @@ require 'open-uri'
 
 class HomeController < ApplicationController
   def index
-    @images = Unsplash::Photo.search("pattern")
+    @images = Unsplash::Photo.search("pattern", 1, 30)
   end
 
   def download_image
