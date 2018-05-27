@@ -10,7 +10,7 @@
   <div class="card-columns">
     <% @images.each do |image| %>
       <div class="card">
-        <img class="card-img-top" src="<%= resized_url(url: image.urls.raw, w: 400, h: 400) %>" alt="Card image cap">
+        <img class="card-img-top" src="<%= resized_url(url: image.urls.raw, w: 600, h: 600) %>" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><%= image.user.name %></h5>
           <p class="card-text">
@@ -34,6 +34,8 @@
             <%= link_to "1180x2400", download_image_path(url: image.urls.raw, w: 1180, h: 2400, image_id: image.id), target: "_blank" %>
             <%= link_to "1150x1300", download_image_path(url: image.urls.raw, w: 1150, h: 1300, image_id: image.id), target: "_blank" %>
             <%= link_to "950x950", download_image_path(url: image.urls.raw, w: 950, h: 950, image_id: image.id), target: "_blank" %>
+            Society6:
+            <%= link_to "6500x6500", download_image_path(url: image.urls.raw, w: 6500, h: 6500, image_id: image.id), target: "_blank" %>
           </p>
         </div>
       </div>
