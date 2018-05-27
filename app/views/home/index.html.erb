@@ -1,0 +1,23 @@
+<table class="table table-hovered">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>User</th>
+      <th>Bio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @images.each do |image| %>
+      <tr>
+        <td>
+          <%= link_to(resized_url(url: image.urls.raw, w: 800, h: 800), download: "#{image.id}_800x800") do %>
+            <img src="<%= resized_url(url: image.urls.raw, w: 100, h: 100) %>" alt="">
+          <% end %>
+        </td>
+        <td><%= image.user.name %> @<%= image.user.twitter_username %></td>
+        <td><%= image.user.bio %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
