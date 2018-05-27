@@ -38,6 +38,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # My personal gems
 gem "unsplash"                    # unsplash api wrapper
+gem "bootstrap", "~> 4.1.1"       # css framework
+gem "jquery-rails"                # bootstrap depends on jquery
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
